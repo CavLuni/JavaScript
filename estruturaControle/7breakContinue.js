@@ -16,7 +16,7 @@ for (y in nums) {
 
 externo: for (a in nums) {
     for (b in nums) {
-        if (a == 2 && b ==3) break externo
+        if (a == 2 && b ==3) break externo// referencia a interromper o laço externo e não o mais próximo
         console.log(`Par = ${a}, ${b}`)
     }
 }
