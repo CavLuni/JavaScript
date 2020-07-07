@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+    <style>
+        #conteudo {
+            padding: 30px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+       <h1>  Exercícios HTML </h1>
+    </header>
+    <nav>
+        <a href="exercicios/teste.html">00 - teste</a> |<!-- href deixa uma mãosinha em cima do link -->
+        <a href="exercicios/1texto.html">01 - teste</a> |
+        <a href="exercicios/2texto.html">02 - teste</a> |
+        <a href="exercicios/3listas.html">03 - lista</a> |
+        <a href="exercicios/4listaAninhada.html">04 - Lista Aninhada</a> |
+        <a href="exercicios/5links.html">05 - Links</a> |
+        <a href="exercicios/6tabela.html">06 - Tabela</a> |
+        <a href="exercicios/formulario/formulario.html">07 - Formulário</a> |
+        <a href="exercicios/7imagens.html">08 - Imagens</a> |
+        <a href="exercicios/8video.html">09 - Vídeo</a>
+    </nav>
+    <section id="conteudo"></section>
+    <footer>
+        Curso Web Moderno
+    </footer>
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+
+            link.onclick = function(e) {
+                e.preventDefault()//previne o comportamento padrão interceptando a ação
+                fetch(link.href)
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+    
+</body>
+</html>
